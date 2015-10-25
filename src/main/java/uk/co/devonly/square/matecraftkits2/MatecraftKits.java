@@ -24,8 +24,6 @@ import uk.co.devonly.cleggeh.matecraftkits2.lang;
 
 public class MatecraftKits extends JavaPlugin implements Listener {
 
-    lang lang = new lang(this);
-
     ArrayList<String> discoOff = new ArrayList<String>();
     ArrayList<String> rainOff = new ArrayList<String>();
 
@@ -48,6 +46,7 @@ public class MatecraftKits extends JavaPlugin implements Listener {
     Kits setArmourBlack = new Kits(this);
     Kits setArmourGrey = new Kits(this);
     Kits setArmourBrown = new Kits(this);
+    lang lang = new lang(this);
 
     int rainred = 255;
     int rainblue = 0;
@@ -59,7 +58,7 @@ public class MatecraftKits extends JavaPlugin implements Listener {
 
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
 
-            private Random r = new Random();
+            private final Random r = new Random();
 
             public void run() {
 
@@ -166,8 +165,7 @@ public class MatecraftKits extends JavaPlugin implements Listener {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-        
-        
+
         if (cmd.getName().equalsIgnoreCase("dye")) {
             if (!(sender instanceof Player)) {
                 lang.consoleerror(sender); //Console command error
@@ -329,27 +327,15 @@ public class MatecraftKits extends JavaPlugin implements Listener {
                 }
                 if (args[1].equalsIgnoreCase("RGB")) {
                     if (args.length <= 2) {
-                        p.sendMessage("");
-
-                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Please specify an integer for the red, green, and blue values!");
-                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Proper use: /dye all RGB [redValue(0 - 255)] [greenValue(0 - 255)] [blueValue(0 - 255)]");
-                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "If you need help choosing a colour, check here: " + ChatColor.LIGHT_PURPLE + "http://www.colorpicker.com/");
+                        lang.RGBargs(p);
                         return true;
                     }
                     if (args.length >= 6) {
-                        p.sendMessage("");
-
-                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Too many arguments given!");
-                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Proper use: /dye all RGB [redValue(0 - 255)] [greenValue(0 - 255)] [blueValue(0 - 255)]");
-                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "If you need help choosing a colour, check here: " + ChatColor.LIGHT_PURPLE + "http://www.colorpicker.com/");
+                        lang.RGBargs(p);
                         return true;
                     }
                     if (args.length < 5) {
-                        p.sendMessage("");
-
-                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Please specify an integer for ALL red, green, and blue values!");
-                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Proper use: /dye all RGB [redValue(0 - 255)] [greenValue(0 - 255)] [blueValue(0 - 255)]");
-                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "If you need help choosing a colour, check here: " + ChatColor.LIGHT_PURPLE + "http://www.colorpicker.com/");
+                        lang.RGBargs(p);
                         return true;
                     }
                     String redValueStr = args[2];
@@ -463,7 +449,7 @@ public class MatecraftKits extends JavaPlugin implements Listener {
         if (cmd.getName().equalsIgnoreCase("mkit") || cmd.getName().equalsIgnoreCase("kit")) {
             if (args.length == 0) {
                 if (!(sender instanceof Player)) {
-                    sender.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Welp! That didn't work. Try /mkit give [player] instead!");
+                   lang.consoleerror(sender);
                     return true;
                 }
                 Player p = (Player) sender;
