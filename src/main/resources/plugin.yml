@@ -1,0 +1,72 @@
+name: MatecraftKits2
+version: 0.5
+main: uk.co.devonly.square.matecraftkits2.MatecraftKits
+description: Custom items with custom names for custom players in a custom place.
+author: SquareRival
+
+commands:
+    mkit:
+        usage: /<command>
+        description: Base command
+    disco:
+        usage: /<command>
+        description: Toggle disco armour for yourself
+    rainbow:
+        usage: /<command>
+        description: Toggle rainbow armour for yourself
+    dye:
+        usage: /<command>
+        description: Dye your armour.
+
+permissions:
+    matecraftkits.use.starter:
+        default: op
+        description: Use kit starter.
+    matecraftkits.disco.helmet:
+        default: op
+        description: Use disco helmet
+    matecraftkits.disco.chestplate:
+        default: op
+        description: Use disco chestplate
+    matecraftkits.disco.leggings:
+        default: op
+        description: Use disco leggings
+    matecraftkits.disco.boots:
+        default: op
+        description: Use disco boots
+    matecraftkits.rainbow.helmet:
+        default: op
+        description: Use rainbow helmet
+    matecraftkits.rainbow.chestplate:
+        default: op
+        description: Use rainbow chestplate
+    matecraftkits.rainbow.leggings:
+        default: op
+        description: Use rainbow leggings
+    matecraftkits.rainbow.boots:
+        default: op
+        description: Use rainbow boots
+    matecraftkits.dye:
+        default: op
+        description: Use the dye commands.
+    matecraftkits.use.disco:
+        default: op
+        description: Use disco kit
+    matecraftkits.use.rainbow:
+        default: op
+        description: Use rainbow kit
+    matecraftkits.disco.toggle:
+        default: op
+        description: Toggle disco armour
+    matecraftkits.rainbow.toggle:
+        default: op
+        description: Toggle rainbow armour
+    matecraftkits.setcolourdelay:
+        default: op
+        description: Set colour changing time
+    matecraftkits.use:
+        default: op
+        description: Use MatecraftKits
+    matecraftkits.reload:
+        default: op
+        description: Reloads Config
