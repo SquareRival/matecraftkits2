@@ -21,18 +21,56 @@ public class SettingsManager {
 	}
 	
 	Plugin p;
+        
 	FileConfiguration config;
 	File cfile;
+        
+        FileConfiguration playersYML;
+        File pfile;
 	
 	public void setup(Plugin p) {
+            	cfile = new File(p.getDataFolder(), "config.yml");
 		config = p.getConfig();
-		config.options().copyDefaults(true);
-		cfile = new File(p.getDataFolder(), "config.yml");
+		//config.options().copyDefaults(true);
+                
+                if (!p.getDataFolder().exists()) {
+                    try {
+                        p.getDataFolder().createNewFile();
+                    }
+                    catch (IOException e) {
+                        Bukkit.getServer().getLogger().severe(ChatColor.RED + "Could not create Kits folder!");
+                    }
+                }
+                pfile = new File(p.getDataFolder(), "players.yml");
+                
+                if (!pfile.exists()) {
+                    try {
+                        pfile.createNewFile();
+                    }
+                    catch (IOException e){
+                        Bukkit.getServer().getLogger().severe(ChatColor.RED + "Could not create player.yml!");
+                    }
+                }
+                playersYML = YamlConfiguration.loadConfiguration(pfile);
+                
 	}
+        
+        public FileConfiguration getPlayerYML() {
+            return playersYML;
+        }
 	
 	public FileConfiguration getConfig() {
 		return config;
 	}
+        
+        public void savePlayersYML() {
+            try {
+                playersYML.save(pfile);
+            }
+            catch (IOException e) {
+                Bukkit.getServer().getLogger().severe(ChatColor.RED + "Could not save players.yml!");
+            }
+        }
 	
 	public void saveConfig() {
 		try {
@@ -41,8 +79,10 @@ public class SettingsManager {
 		catch (IOException e) {
 			Bukkit.getServer().getLogger().severe(ChatColor.RED + "Could not save config.yml!");
 		}
-	}
-	
+        }
+        public void reloadPlayersYML() {
+            playersYML = YamlConfiguration.loadConfiguration(pfile);
+        }
 	public void reloadConfig() {
 		config = YamlConfiguration.loadConfiguration(cfile);
 	}
@@ -50,5 +90,4 @@ public class SettingsManager {
 	public PluginDescriptionFile getDesc() {
 		return p.getDescription();
 	}
-
 }
