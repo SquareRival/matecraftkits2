@@ -166,18 +166,20 @@ public class MatecraftKits extends JavaPlugin implements Listener {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
+        
+        
         if (cmd.getName().equalsIgnoreCase("dye")) {
             if (!(sender instanceof Player)) {
-                sender.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Welp! That didn't work. Try /mkit give [player] instead!");
+                lang.consoleerror(sender); //Console command error
                 return true;
             }
             Player p = (Player) sender;
             if (!(p.hasPermission("matecraftkits.dye"))) {
-                p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "No permission!");
+                lang.noperms(p); // Player no perms
                 return true;
             }
             if ((args.length == 0) || (args.length < 1)) {
-                p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Not enough arguments!");
+                lang.args(p); // Not enough Args
                 return true;
             }
             if (args[0].equalsIgnoreCase("colour")) {

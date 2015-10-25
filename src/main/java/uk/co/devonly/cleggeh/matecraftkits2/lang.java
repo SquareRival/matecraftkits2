@@ -6,6 +6,7 @@
 package uk.co.devonly.cleggeh.matecraftkits2;
 
 import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import uk.co.devonly.square.matecraftkits2.MatecraftKits;
 
@@ -45,5 +46,14 @@ public class lang {
    }
    public void dyedarmour(Player p) {
        p.sendMessage("§7[§5§lMatecraft§7] " +ChatColor.GREEN + "Your armour has been dyed!");
+   }
+   public void consoleerror(CommandSender sender) {
+       sender.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Welp! That didn't work. Try /mkit give [player] instead!");
+   }
+   public void noperms(Player p) {
+       p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "No permission!");
+   }
+   public void args(Player p) {
+       p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Not enough arguments!");
    }
 }
