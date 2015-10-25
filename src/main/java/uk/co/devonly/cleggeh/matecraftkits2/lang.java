@@ -22,28 +22,28 @@ public class lang {
     }
 
     public void colourhelp(Player p) {
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] red");
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] orange");
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] yellow");
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] green");
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] lime");
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] aqua");
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] cyan");
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] blue");
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] violet");
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] purple");
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] pink");
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] black");
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] white");
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] brown");
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] grey");
-        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "/dye [piece(s)] RGB " + ChatColor.RED + "[1 - 255] " + ChatColor.GREEN + "[1 - 255] " + ChatColor.BLUE + "[1 - 255] ");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] red");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] orange");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] yellow");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] green");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] lime");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] aqua");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] cyan");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] blue");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] violet");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] purple");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] pink");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] black");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] white");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] brown");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] grey");
+        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "/dye [piece(s)] RGB " + ChatColor.RED + "[1 - 255] " + ChatColor.GREEN + "[1 - 255] " + ChatColor.BLUE + "[1 - 255] ");
     }
     
    public void allarmour(Player p) {
-       p.sendMessage("�7[�5�lMatecraft�7] " +ChatColor.RED + "You must be wearing a full set of leather armour to dye all!");
+       p.sendMessage("§7[§5§lMatecraft§7] " +ChatColor.RED + "You must be wearing a full set of leather armour to dye all!");
    }
    public void dyedarmour(Player p) {
-       p.sendMessage("�7[�5�lMatecraft�7] " +ChatColor.GREEN + "Your armour has been dyed!");
+       p.sendMessage("§7[§5§lMatecraft§7] " +ChatColor.GREEN + "Your armour has been dyed!");
    }
 }

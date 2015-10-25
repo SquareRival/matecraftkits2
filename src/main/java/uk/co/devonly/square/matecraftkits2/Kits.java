@@ -68,7 +68,7 @@ public class Kits {
             List<String> plfoodlore = new ArrayList<String>();
             plfoodlore.add(ChatColor.DARK_GRAY + "Finger lickin' goodness, " + p.getName());
             plfoodlore.add("");
-            plfoodlore.add("�9+0.0001 Attack Damage");
+            plfoodlore.add("§9+0.0001 Attack Damage");
             plfoodmeta.setLore(plfoodlore);
             plfood.setItemMeta(plfoodmeta);
             
@@ -77,7 +77,7 @@ public class Kits {
             pi.addItem(plspade);
             pi.addItem(plfood);
             
-            p.sendMessage("�7[�5�lMatecraft�7] �aTools specially crafted just for you, " + p.getName());
+            p.sendMessage("§7[§5§lMatecraft§7] §aTools specially crafted just for you, " + p.getName());
             return;
         }
         plpickmeta.setDisplayName(ChatColor.AQUA + "" + ChatColor.BOLD + p.getName() + "'s First Pick" );
@@ -102,7 +102,7 @@ public class Kits {
         List<String> plfoodlore = new ArrayList<String>();
         plfoodlore.add(ChatColor.DARK_GRAY + "Finger lickin' goodness, " + p.getName());
         plfoodlore.add("");
-        plfoodlore.add("�9+0.0001 Attack Damage");
+        plfoodlore.add("§9+0.0001 Attack Damage");
         plfoodmeta.setLore(plfoodlore);
         plfood.setItemMeta(plfoodmeta);
         
@@ -111,7 +111,7 @@ public class Kits {
         pi.addItem(plspade);
         pi.addItem(plfood);
         
-        p.sendMessage("�7[�5�lMatecraft�7] �aTools specially crafted just for you, " + p.getName());
+        p.sendMessage("§7[§5§lMatecraft§7] §aTools specially crafted just for you, " + p.getName());
         }
 	
 	public static void giveStarterKit(Player t) {
@@ -161,7 +161,7 @@ public class Kits {
             List<String> plfoodlore = new ArrayList<String>();
             plfoodlore.add(ChatColor.DARK_GRAY + "Finger lickin' goodness, " + t.getName());
             plfoodlore.add("");
-            plfoodlore.add("�9+0.0001 Attack Damage");
+            plfoodlore.add("§9+0.0001 Attack Damage");
             plfoodmeta.setLore(plfoodlore);
             plfood.setItemMeta(plfoodmeta);
             
@@ -170,7 +170,7 @@ public class Kits {
             ti.addItem(plspade);
             ti.addItem(plfood);
             
-            t.sendMessage("�7[�5�lMatecraft�7] �aTools specially crafted just for you, " + t.getName());
+            t.sendMessage("§7[§5§lMatecraft§7] §aTools specially crafted just for you, " + t.getName());
             return;
         }
         plpickmeta.setDisplayName(ChatColor.AQUA + "" + ChatColor.BOLD + t.getName() + "'s First Pick" );
@@ -195,7 +195,7 @@ public class Kits {
         List<String> plfoodlore = new ArrayList<String>();
         plfoodlore.add(ChatColor.DARK_GRAY + "Finger lickin' goodness, " + t.getName());
         plfoodlore.add("");
-        plfoodlore.add("�9+0.0001 Attack Damage");
+        plfoodlore.add("§9+0.0001 Attack Damage");
         plfoodmeta.setLore(plfoodlore);
         plfood.setItemMeta(plfoodmeta);
         
@@ -204,7 +204,7 @@ public class Kits {
         ti.addItem(plspade);
         ti.addItem(plfood);
         
-        t.sendMessage("�7[�5�lMatecraft�7] �aTools specially crafted just for you, " + t.getName());
+        t.sendMessage("§7[§5§lMatecraft§7] §aTools specially crafted just for you, " + t.getName());
         }
 	public static void setArmourRed(Player p) {
 		Color red = Color.fromRGB(255, 0, 0);
@@ -875,7 +875,7 @@ public class Kits {
 		pi.addItem(discoBoot);
         }
 		
-        p.sendMessage("�7[�5�lMatecraft�7] �aDisco armour made just for you, " + p.getName() + ". Thanks for supporting the server!");
+        p.sendMessage("§7[§5§lMatecraft§7] §aDisco armour made just for you, " + p.getName() + ". Thanks for supporting the server!");
 
 	}
 	public static void rainbowKit(Player p) {
@@ -942,7 +942,7 @@ public class Kits {
 		pi.addItem(rainbowBoot);
         }
 		
-        p.sendMessage("�7[�5�lMatecraft�7] �aRainbow armour made just for you, " + p.getName() + ". Thanks for supporting the server!");
+        p.sendMessage("§7[§5§lMatecraft§7] §aRainbow armour made just for you, " + p.getName() + ". Thanks for supporting the server!");
 
 	}
 }

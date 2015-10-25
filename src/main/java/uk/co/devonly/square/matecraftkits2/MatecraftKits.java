@@ -168,16 +168,16 @@ public class MatecraftKits extends JavaPlugin implements Listener {
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (cmd.getName().equalsIgnoreCase("dye")) {
             if (!(sender instanceof Player)) {
-                sender.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Welp! That didn't work. Try /mkit give [player] instead!");
+                sender.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Welp! That didn't work. Try /mkit give [player] instead!");
                 return true;
             }
             Player p = (Player) sender;
             if (!(p.hasPermission("matecraftkits.dye"))) {
-                p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "No permission!");
+                p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "No permission!");
                 return true;
             }
             if ((args.length == 0) || (args.length < 1)) {
-                p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Not enough arguments!");
+                p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Not enough arguments!");
                 return true;
             }
             if (args[0].equalsIgnoreCase("colour")) {
@@ -187,7 +187,7 @@ public class MatecraftKits extends JavaPlugin implements Listener {
             }
             if (args[0].equalsIgnoreCase("all")) {
                 if (args.length == 1) {
-                    p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Please specify a colour you wish your armour to be!");
+                    p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Please specify a colour you wish your armour to be!");
                     return true;
                 }
                 if (args[1].equalsIgnoreCase("red")) {
@@ -329,25 +329,25 @@ public class MatecraftKits extends JavaPlugin implements Listener {
                     if (args.length <= 2) {
                         p.sendMessage("");
 
-                        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Please specify an integer for the red, green, and blue values!");
-                        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Proper use: /dye all RGB [redValue(0 - 255)] [greenValue(0 - 255)] [blueValue(0 - 255)]");
-                        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "If you need help choosing a colour, check here: " + ChatColor.LIGHT_PURPLE + "http://www.colorpicker.com/");
+                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Please specify an integer for the red, green, and blue values!");
+                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Proper use: /dye all RGB [redValue(0 - 255)] [greenValue(0 - 255)] [blueValue(0 - 255)]");
+                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "If you need help choosing a colour, check here: " + ChatColor.LIGHT_PURPLE + "http://www.colorpicker.com/");
                         return true;
                     }
                     if (args.length >= 6) {
                         p.sendMessage("");
 
-                        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Too many arguments given!");
-                        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Proper use: /dye all RGB [redValue(0 - 255)] [greenValue(0 - 255)] [blueValue(0 - 255)]");
-                        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "If you need help choosing a colour, check here: " + ChatColor.LIGHT_PURPLE + "http://www.colorpicker.com/");
+                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Too many arguments given!");
+                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Proper use: /dye all RGB [redValue(0 - 255)] [greenValue(0 - 255)] [blueValue(0 - 255)]");
+                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "If you need help choosing a colour, check here: " + ChatColor.LIGHT_PURPLE + "http://www.colorpicker.com/");
                         return true;
                     }
                     if (args.length < 5) {
                         p.sendMessage("");
 
-                        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Please specify an integer for ALL red, green, and blue values!");
-                        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Proper use: /dye all RGB [redValue(0 - 255)] [greenValue(0 - 255)] [blueValue(0 - 255)]");
-                        p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "If you need help choosing a colour, check here: " + ChatColor.LIGHT_PURPLE + "http://www.colorpicker.com/");
+                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Please specify an integer for ALL red, green, and blue values!");
+                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Proper use: /dye all RGB [redValue(0 - 255)] [greenValue(0 - 255)] [blueValue(0 - 255)]");
+                        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "If you need help choosing a colour, check here: " + ChatColor.LIGHT_PURPLE + "http://www.colorpicker.com/");
                         return true;
                     }
                     String redValueStr = args[2];
@@ -425,9 +425,9 @@ public class MatecraftKits extends JavaPlugin implements Listener {
 
                 } else {
                     p.sendMessage("");
-                    p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Something wasn't input correctly or the colour doesn't exist...");
-                    p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Proper use: /dye all [colour / RGB] [redValue(0 - 255)] [greenValue(0 - 255)] [blueValue(0 - 255)]");
-                    p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.LIGHT_PURPLE + "If you need help choosing a colour, check here: " + ChatColor.DARK_PURPLE + "http://www.colorpicker.com/");
+                    p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Something wasn't input correctly or the colour doesn't exist...");
+                    p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Proper use: /dye all [colour / RGB] [redValue(0 - 255)] [greenValue(0 - 255)] [blueValue(0 - 255)]");
+                    p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.LIGHT_PURPLE + "If you need help choosing a colour, check here: " + ChatColor.DARK_PURPLE + "http://www.colorpicker.com/");
                     return true;
                 }
             }
@@ -436,24 +436,24 @@ public class MatecraftKits extends JavaPlugin implements Listener {
         if (cmd.getName().equalsIgnoreCase("disco") && sender.hasPermission("matecraftkits.disco.toggle")) {
             if (discoOff.contains(sender.getName())) {
                 discoOff.remove(sender.getName());
-                sender.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "Disco armour is now enabled for you!");
+                sender.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "Disco armour is now enabled for you!");
                 return true;
             }
             if (!(discoOff.contains(sender.getName()))) {
                 discoOff.add(sender.getName());
-                sender.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "Disco armour is now disabled for you!");
+                sender.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "Disco armour is now disabled for you!");
                 return true;
             }
         }
         if (cmd.getName().equalsIgnoreCase("rainbow") && sender.hasPermission("matecraftkits.rainbow.toggle")) {
             if (rainOff.contains(sender.getName())) {
                 rainOff.remove(sender.getName());
-                sender.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "Rainbow armour is now enabled for you!");
+                sender.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "Rainbow armour is now enabled for you!");
                 return true;
             }
             if (!(rainOff.contains(sender.getName()))) {
                 rainOff.add(sender.getName());
-                sender.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "Rainbow armour is now disabled for you!");
+                sender.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "Rainbow armour is now disabled for you!");
                 return true;
             }
             return true;
@@ -461,76 +461,76 @@ public class MatecraftKits extends JavaPlugin implements Listener {
         if (cmd.getName().equalsIgnoreCase("mkit") || cmd.getName().equalsIgnoreCase("kit")) {
             if (args.length == 0) {
                 if (!(sender instanceof Player)) {
-                    sender.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Welp! That didn't work. Try /mkit give [player] instead!");
+                    sender.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Welp! That didn't work. Try /mkit give [player] instead!");
                     return true;
                 }
                 Player p = (Player) sender;
-                p.sendMessage("�8�l�m---------�r�8�l[�5MatecraftKits�8�l]�m---------");
-                p.sendMessage(ChatColor.GREEN + "� /mkit info");
+                p.sendMessage("§8§l§m---------§r§8§l[§5MatecraftKits§8§l]§m---------");
+                p.sendMessage(ChatColor.GREEN + "§ /mkit info");
                 p.sendMessage(ChatColor.GRAY + " > Gives info about MatecraftKits");
                 if (p.hasPermission("matecraftkits.use")) {
-                    p.sendMessage(ChatColor.GREEN + "� /mkit");
+                    p.sendMessage(ChatColor.GREEN + "§ /mkit");
                     p.sendMessage(ChatColor.GRAY + " > Shows this menu");
                     p.sendMessage(ChatColor.GRAY + " > Permission: " + ChatColor.LIGHT_PURPLE + "matecraftkits.use");
                 }
                 if (p.hasPermission("matecraftkits.list")) {
-                    p.sendMessage(ChatColor.GREEN + "� /mkit list");
+                    p.sendMessage(ChatColor.GREEN + "§ /mkit list");
                     p.sendMessage(ChatColor.GRAY + " > Shows all available MatecraftKits");
                     p.sendMessage(ChatColor.GRAY + " > Permission: " + ChatColor.LIGHT_PURPLE + "matecraftkits.list");
                 }
                 if (p.hasPermission("matecraftkits.disco.toggle")) {
-                    p.sendMessage(ChatColor.GREEN + "� /disco");
+                    p.sendMessage(ChatColor.GREEN + "§ /disco");
                     p.sendMessage(ChatColor.GRAY + " > Toggles your use of disco armour");
                     p.sendMessage(ChatColor.GRAY + " > Permission: " + ChatColor.LIGHT_PURPLE + "matecraftkits.disco.toggle");
                 }
                 if (p.hasPermission("matecraftkits.setcolourdelay")) {
-                    p.sendMessage(ChatColor.GREEN + "� /mkit setcolourdelay [value]");
+                    p.sendMessage(ChatColor.GREEN + "§ /mkit setcolourdelay [value]");
                     p.sendMessage(ChatColor.GRAY + " > Sets the amount of ticks per colour change for disco armour");
                     p.sendMessage(ChatColor.GRAY + " > Permission: " + ChatColor.LIGHT_PURPLE + "matecraftkits.setcolourdelay");
                 }
                 if (p.hasPermission("matecraftkits.reload")) {
-                    p.sendMessage(ChatColor.GREEN + "� /mkit reload");
+                    p.sendMessage(ChatColor.GREEN + "§ /mkit reload");
                     p.sendMessage(ChatColor.GRAY + " > Reload MatecraftKits (Does nothing at the moment)");
                     p.sendMessage(ChatColor.GRAY + " > Permission: " + ChatColor.LIGHT_PURPLE + "matecraftkits.reload");
                 }
                 if (p.hasPermission("matecraftkits.dye")) {
-                    p.sendMessage(ChatColor.GREEN + "� /dye [all, helmet, chestplate, leggings, boots] [colour / RGB] (redValue) (greenValue) (blueValue)");
+                    p.sendMessage(ChatColor.GREEN + "§ /dye [all, helmet, chestplate, leggings, boots] [colour / RGB] (redValue) (greenValue) (blueValue)");
                     p.sendMessage(ChatColor.GRAY + " > Changes the colour of your leather armour");
                     p.sendMessage(ChatColor.GRAY + " > Permission: " + ChatColor.LIGHT_PURPLE + "matecraftkits.dye");
                 }
                 if (p.hasPermission("matecraftkits.dye")) {
-                    p.sendMessage(ChatColor.GREEN + "� /dye colours");
+                    p.sendMessage(ChatColor.GREEN + "§ /dye colours");
                     p.sendMessage(ChatColor.GRAY + " > Shows all the colours");
                     p.sendMessage(ChatColor.GRAY + " > Permission: " + ChatColor.LIGHT_PURPLE + "matecraftkits.dye");
                 }
-                p.sendMessage("�8�l�m---------�r�8�l[�5MatecraftKits�8�l]�m---------");
+                p.sendMessage("§8§l§m---------§r§8§l[§5MatecraftKits§8§l]§m---------");
                 return true;
             }
             if ((args[0].equalsIgnoreCase("setcolourdelay")) && sender.hasPermission("matecraftkits.setcolourdelay")) {
                 if (args.length > 2) {
-                    sender.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Too many arguments!");
+                    sender.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Too many arguments!");
                     return true;
                 }
                 if (args.length == 1) {
-                    sender.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Not enough arguments!");
+                    sender.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Not enough arguments!");
                     return true;
                 }
                 String colourdelay = args[1];
                 int delay = Integer.parseInt(colourdelay);
                 settings.getConfig().set("colourDelay", delay);
                 settings.saveConfig();
-                sender.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "Colour delay set to: " + ChatColor.GREEN + args[1]);
+                sender.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "Colour delay set to: " + ChatColor.GREEN + args[1]);
                 return true;
             }
             if (args[0].equalsIgnoreCase("reload")) {
                 settings.saveConfig();
                 settings.reloadConfig();
-                sender.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.GREEN + "MatecraftKits config reloaded!");
+                sender.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "MatecraftKits config reloaded!");
                 return true;
             }
             if (args[0].equalsIgnoreCase("give")) {
                 if (args.length == 1) {
-                    sender.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Please specify a player you wish to give a kit to!");
+                    sender.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Please specify a player you wish to give a kit to!");
                     return true;
                 }
                 Player t = Bukkit.getServer().getPlayer(args[1]);
@@ -539,17 +539,17 @@ public class MatecraftKits extends JavaPlugin implements Listener {
                     return true;
                 }
                 Kits.giveStarterKit(t);
-                sender.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.DARK_GREEN + t.getName() + ChatColor.GREEN + " has recieved their custom kit!");
+                sender.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.DARK_GREEN + t.getName() + ChatColor.GREEN + " has recieved their custom kit!");
                 return true;
             }
             Player p = (Player) sender;
             if (args[0].equalsIgnoreCase("starter")) {
                 if (!(p.hasPermission("pkit.use.starter"))) {
-                    p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "No permission!");
+                    p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "No permission!");
                     return true;
                 }
                 if (args.length > 1) {
-                    p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Too many arguments!");
+                    p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Too many arguments!");
                     return true;
                 }
                 Kits.starterKit(p);
@@ -559,80 +559,80 @@ public class MatecraftKits extends JavaPlugin implements Listener {
         Player p = (Player) sender;
         if (args[0].equalsIgnoreCase("list")) {
             if (!(p.hasPermission("matecraftkits.list"))) {
-                p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "No permission!");
+                p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "No permission!");
                 return true;
             }
             if (args.length > 1) {
-                p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Too many arguments!");
+                p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Too many arguments!");
                 return true;
             }
-            p.sendMessage("�8�l�m---------�r�8�l[�5MatecraftKits�8�l]�m---------");
+            p.sendMessage("§8§l§m---------§r§8§l[§5MatecraftKits§8§l]§m---------");
             if (p.hasPermission("matecraftkits.use.starter")) {
-                p.sendMessage(ChatColor.GREEN + "� /mkit starter");
+                p.sendMessage(ChatColor.GREEN + "§ /mkit starter");
                 p.sendMessage(ChatColor.GRAY + " > Gives starter kit");
                 p.sendMessage(ChatColor.GRAY + " > Kit includes:");
-                p.sendMessage(ChatColor.GRAY + " > �f1 �dPickaxe");
-                p.sendMessage(ChatColor.GRAY + " > �f1 �dAxe");
-                p.sendMessage(ChatColor.GRAY + " > �f1 �dShovel");
-                p.sendMessage(ChatColor.GRAY + " > �f64 �dKFCs");
-                p.sendMessage(ChatColor.GRAY + "�8�l�m+----------------------+");
+                p.sendMessage(ChatColor.GRAY + " > §f1 §dPickaxe");
+                p.sendMessage(ChatColor.GRAY + " > §f1 §dAxe");
+                p.sendMessage(ChatColor.GRAY + " > §f1 §dShovel");
+                p.sendMessage(ChatColor.GRAY + " > §f64 §dKFCs");
+                p.sendMessage(ChatColor.GRAY + "§8§l§m+----------------------+");
             }
             if (p.hasPermission("matecraftkits.use.disco")) {
-                p.sendMessage(ChatColor.GREEN + "� /mkit disco");
+                p.sendMessage(ChatColor.GREEN + "§ /mkit disco");
                 p.sendMessage(ChatColor.GRAY + " > Gives disco armour kit");
                 p.sendMessage(ChatColor.GRAY + " > Kit includes:");
-                p.sendMessage(ChatColor.GRAY + " > �f1 �dDisco Armour Set");
+                p.sendMessage(ChatColor.GRAY + " > §f1 §dDisco Armour Set");
             }
-            p.sendMessage("�8�l�m---------�r�8�l[�5MatecraftKits�8�l]�m---------");
+            p.sendMessage("§8§§l§m---------§r§8§l[§5MatecraftKits§8§l]§m---------");
             return true;
         }
         if (args[0].equalsIgnoreCase("info")) {
-            p.sendMessage("�8�l�m---------�r�8�l[�5MatecraftKits�8�l]�m---------");
+            p.sendMessage("§8§l§m---------§r§8§l[§5MatecraftKits§8§l]§m---------");
             p.sendMessage(ChatColor.LIGHT_PURPLE + " MatecraftKits is a custom kit plugin made for Matecraft. It's the plugin that gives you the tools and food you start off with. It's also the plugin that allows for disco armour!");
             p.sendMessage("");
             p.sendMessage(ChatColor.GREEN + "Version: " + ChatColor.LIGHT_PURPLE + "1.0");
             p.sendMessage(ChatColor.GREEN + "Author: " + ChatColor.LIGHT_PURPLE + "SquareRival");
 
-            p.sendMessage("�8�l�m---------�r�8�l[�5MatecraftKits�8�l]�m---------");
+            p.sendMessage("§8§l§m---------§r§8§l[§5MatecraftKits§8§l]§m---------");
             return true;
         }
         if (args[0].equalsIgnoreCase("help")) {
-            p.sendMessage("�8�l�m---------�r�8�l[�5MatecraftKits�8�l]�m---------");
+            p.sendMessage("§8§l§m---------§r§8§l[§5MatecraftKits§8§l]§m---------");
             if (p.hasPermission("matecraftkits.use")) {
-                p.sendMessage(ChatColor.GREEN + "� /mkit");
+                p.sendMessage(ChatColor.GREEN + "§ /mkit");
                 p.sendMessage(ChatColor.GRAY + " > Shows this menu");
                 p.sendMessage(ChatColor.GRAY + " > Permission: " + ChatColor.LIGHT_PURPLE + "matecraftkits.use");
             }
             if (p.hasPermission("matecraftkits.list")) {
-                p.sendMessage(ChatColor.GREEN + "� /mkit list");
+                p.sendMessage(ChatColor.GREEN + "§ /mkit list");
                 p.sendMessage(ChatColor.GRAY + " > Shows all available MatecraftKits");
                 p.sendMessage(ChatColor.GRAY + " > Permission: " + ChatColor.LIGHT_PURPLE + "matecraftkits.list");
             }
             if (p.hasPermission("matecraftkits.disco.toggle")) {
-                p.sendMessage(ChatColor.GREEN + "� /disco");
+                p.sendMessage(ChatColor.GREEN + "§ /disco");
                 p.sendMessage(ChatColor.GRAY + " > Toggles your use of disco armour");
                 p.sendMessage(ChatColor.GRAY + " > Permission: " + ChatColor.LIGHT_PURPLE + "matecraftkits.disco.toggle");
             }
             if (p.hasPermission("matecraftkits.setcolourdelay")) {
-                p.sendMessage(ChatColor.GREEN + "� /mkit setcolourdelay [value]");
+                p.sendMessage(ChatColor.GREEN + "§ /mkit setcolourdelay [value]");
                 p.sendMessage(ChatColor.GRAY + " > Sets the amount of ticks per colour change for disco armour");
                 p.sendMessage(ChatColor.GRAY + " > Permission: " + ChatColor.LIGHT_PURPLE + "matecraftkits.setcolourdelay");
             }
             if (p.hasPermission("matecraftkits.reload")) {
-                p.sendMessage(ChatColor.GREEN + "� /mkit reload");
+                p.sendMessage(ChatColor.GREEN + "§ /mkit reload");
                 p.sendMessage(ChatColor.GRAY + " > Reload MatecraftKits (Does nothing at the moment)");
                 p.sendMessage(ChatColor.GRAY + " > Permission: " + ChatColor.LIGHT_PURPLE + "matecraftkits.reload");
             }
-            p.sendMessage("�8�l�m---------�r�8�l[�5MatecraftKits�8�l]�m---------");
+            p.sendMessage("§8§l§m---------§r§8§l[§5MatecraftKits§8§l]§m---------");
             return true;
         }
         if (args[0].equalsIgnoreCase("disco")) {
             if (!(p.hasPermission("matecraftkits.use.disco"))) {
-                p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "No permission!");
+                p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "No permission!");
                 return true;
             }
             if (args.length > 1) {
-                p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "Too many arguments!");
+                p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Too many arguments!");
                 return true;
             }
             Kits.discoKit(p);
@@ -640,7 +640,7 @@ public class MatecraftKits extends JavaPlugin implements Listener {
         }
         if (args[0].equalsIgnoreCase("rainbow")) {
             if (!(p.hasPermission("matecraftkits.use.rainbow"))) {
-                p.sendMessage("�7[�5�lMatecraft�7] " + ChatColor.RED + "No permission!");
+                p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "No permission!");
                 return true;
             }
             Kits.rainbowKit(p);
