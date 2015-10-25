@@ -65,8 +65,8 @@ public class lang {
     public void RGBargs(Player p) {
         p.sendMessage("");
 
-        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Too many arguments given!");
-        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Proper use: /dye all RGB [redValue(0 - 255)] [greenValue(0 - 255)] [blueValue(0 - 255)]");
-        p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.GREEN + "If you need help choosing a colour, check here: " + ChatColor.LIGHT_PURPLE + "http://www.colorpicker.com/");
+        p.sendMessage(prefix + ChatColor.RED + "Too many arguments given!");
+        p.sendMessage(prefix + ChatColor.RED + "Proper use: /dye all RGB [redValue(0 - 255)] [greenValue(0 - 255)] [blueValue(0 - 255)]");
+        p.sendMessage(prefix + ChatColor.GREEN + "If you need help choosing a colour, check here: " + ChatColor.LIGHT_PURPLE + "http://www.colorpicker.com/");
     }
 }
