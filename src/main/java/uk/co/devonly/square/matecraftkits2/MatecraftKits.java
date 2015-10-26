@@ -25,18 +25,17 @@ public class MatecraftKits extends JavaPlugin implements Listener {
     ArrayList<String> discoOff = new ArrayList<String>();
     ArrayList<String> rainOff = new ArrayList<String>();
 
-    SettingsManager settings = SettingsManager.getInstance();
-
     Kits kits = new Kits(this);
     lang lang = new lang(this);
     Kits RGBitem = new Kits(this);
-
+    SettingsManager settings = new SettingsManager(this);
+    
     int rainred = 255;
     int rainblue = 0;
     int raingreen = 0;
 
+    @Override
     public void onEnable() {
-        Bukkit.getServer().getPluginManager().registerEvents(this, this);
         settings.setup(this);
 
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
