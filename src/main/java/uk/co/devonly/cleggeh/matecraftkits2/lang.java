@@ -61,7 +61,10 @@ public class lang {
     public void args(Player p) {
         p.sendMessage(prefix + ChatColor.RED + "Not enough arguments!");
     }
-
+    public void invalidargs(Player p) {
+        p.sendMessage(prefix + ChatColor.RED + "Invalid arguments!");
+    }
+    
     public void RGBargs(Player p) {
         p.sendMessage("");
 

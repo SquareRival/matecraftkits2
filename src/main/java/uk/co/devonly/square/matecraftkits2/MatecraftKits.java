@@ -2,7 +2,6 @@ package uk.co.devonly.square.matecraftkits2;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 import org.bukkit.Bukkit;
@@ -17,7 +16,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import uk.co.devonly.cleggeh.matecraftkits2.lang;
@@ -29,24 +27,9 @@ public class MatecraftKits extends JavaPlugin implements Listener {
 
     SettingsManager settings = SettingsManager.getInstance();
 
-    Kits starterKit = new Kits(this);
-    Kits giveStarterKit = new Kits(this);
-    Kits setArmourRed = new Kits(this);
-    Kits setArmourOrange = new Kits(this);
-    Kits setArmourYellow = new Kits(this);
-    Kits setArmourGreen = new Kits(this);
-    Kits setArmourLime = new Kits(this);
-    Kits setArmourAqua = new Kits(this);
-    Kits setArmourSky = new Kits(this);
-    Kits setArmourBlue = new Kits(this);
-    Kits setArmourViolet = new Kits(this);
-    Kits setArmourPurple = new Kits(this);
-    Kits setArmourPink = new Kits(this);
-    Kits setArmourWhite = new Kits(this);
-    Kits setArmourBlack = new Kits(this);
-    Kits setArmourGrey = new Kits(this);
-    Kits setArmourBrown = new Kits(this);
+    Kits kits = new Kits(this);
     lang lang = new lang(this);
+    Kits RGBitem = new Kits(this);
 
     int rainred = 255;
     int rainblue = 0;
@@ -159,7 +142,7 @@ public class MatecraftKits extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
-        if (!(p.hasPlayedBefore())) {
+        if (!(p.hasPlayedBefore()) || settings.getConfig().getBoolean("joinKit") == true) {
             Kits.starterKit(p);
         }
     }
@@ -190,140 +173,91 @@ public class MatecraftKits extends JavaPlugin implements Listener {
                     p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Please specify a colour you wish your armour to be!");
                     return true;
                 }
-                if (args[1].equalsIgnoreCase("red")) {
-                    if (p.getInventory().getHelmet() == null || p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate() == null || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings() == null || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots() == null || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
-                        lang.allarmour(p);
-                        return true;
-                    }
-                    Kits.setArmourRed(p);
-                    lang.dyedarmour(p);
-                    return true;
+                if (p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
+                    lang.allarmour(p);
+                    return false;
                 }
-                if (args[1].equalsIgnoreCase("orange")) {
-                    if (p.getInventory().getHelmet() == null || p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate() == null || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings() == null || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots() == null || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
-                        lang.allarmour(p);
-                        return true;
-                    }
-                    Kits.setArmourOrange(p);
-                    lang.dyedarmour(p);
-                    return true;
-                }
-                if (args[1].equalsIgnoreCase("yellow")) {
-                    if (p.getInventory().getHelmet() == null || p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate() == null || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings() == null || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots() == null || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
-                        lang.allarmour(p);
-                        return true;
-                    }
-                    Kits.setArmourYellow(p);
-                    lang.dyedarmour(p);
-                    return true;
-                }
-                if (args[1].equalsIgnoreCase("green")) {
-                    if (p.getInventory().getHelmet() == null || p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate() == null || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings() == null || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots() == null || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
-                        lang.allarmour(p);
-                        return true;
-                    }
-                    Kits.setArmourGreen(p);
-                    lang.dyedarmour(p);
-                    return true;
-                }
-                if (args[1].equalsIgnoreCase("lime")) {
-                    if (p.getInventory().getHelmet() == null || p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate() == null || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings() == null || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots() == null || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
-                        lang.allarmour(p);
-                        return true;
-                    }
-                    Kits.setArmourLime(p);
-                    lang.dyedarmour(p);
-                    return true;
-                }
-                if (args[1].equalsIgnoreCase("aqua")) {
-                    if (p.getInventory().getHelmet() == null || p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate() == null || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings() == null || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots() == null || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
-                        lang.allarmour(p);
-                        return true;
-                    }
-                    Kits.setArmourAqua(p);
-                    lang.dyedarmour(p);
-                    return true;
-                }
-                if (args[1].equalsIgnoreCase("sky")) {
-                    if (p.getInventory().getHelmet() == null || p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate() == null || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings() == null || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots() == null || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
-                        lang.allarmour(p);
-                        return true;
-                    }
-                    Kits.setArmourSky(p);
-                    lang.dyedarmour(p);
-                    return true;
-                }
-                if (args[1].equalsIgnoreCase("blue")) {
-                    if (p.getInventory().getHelmet() == null || p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate() == null || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings() == null || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots() == null || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
-                        lang.allarmour(p);
-                        return true;
-                    }
-                    Kits.setArmourBlue(p);
-                    lang.dyedarmour(p);
-                    return true;
-                }
-                if (args[1].equalsIgnoreCase("violet")) {
-                    if (p.getInventory().getHelmet() == null || p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate() == null || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings() == null || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots() == null || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
-                        lang.allarmour(p);
-                        return true;
-                    }
-                    Kits.setArmourViolet(p);
-                    lang.dyedarmour(p);
-                    return true;
-                }
-                if (args[1].equalsIgnoreCase("purple")) {
-                    if (p.getInventory().getHelmet() == null || p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate() == null || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings() == null || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots() == null || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
-                        lang.allarmour(p);
-                        return true;
-                    }
-                    Kits.setArmourPurple(p);
-                    lang.dyedarmour(p);
-                    return true;
-                }
-                if (args[1].equalsIgnoreCase("pink")) {
-                    if (p.getInventory().getHelmet() == null || p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate() == null || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings() == null || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots() == null || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
-                        lang.allarmour(p);
-                        return true;
-                    }
-                    Kits.setArmourPink(p);
-                    lang.dyedarmour(p);
-                    return true;
-                }
-                if (args[1].equalsIgnoreCase("white")) {
-                    if (p.getInventory().getHelmet() == null || p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate() == null || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings() == null || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots() == null || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
-                        lang.allarmour(p);
-                        return true;
-                    }
-                    Kits.setArmourWhite(p);
-                    lang.dyedarmour(p);
-                    return true;
-                }
-                if (args[1].equalsIgnoreCase("black")) {
-                    if (p.getInventory().getHelmet() == null || p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate() == null || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings() == null || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots() == null || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
-                        lang.allarmour(p);
-                        return true;
-                    }
-                    Kits.setArmourBlack(p);
-                    lang.dyedarmour(p);
-                    return true;
-                }
-                if (args[1].equalsIgnoreCase("grey")) {
-                    if (p.getInventory().getHelmet() == null || p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate() == null || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings() == null || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots() == null || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
-                        lang.allarmour(p);
-                        return true;
-                    }
-                    Kits.setArmourGrey(p);
-                    lang.dyedarmour(p);
-                    return true;
-                }
-                if (args[1].equalsIgnoreCase("brown")) {
-                    if (p.getInventory().getHelmet() == null || p.getInventory().getHelmet().getType() != Material.LEATHER_HELMET || p.getInventory().getChestplate() == null || p.getInventory().getChestplate().getType() != Material.LEATHER_CHESTPLATE || p.getInventory().getLeggings() == null || p.getInventory().getLeggings().getType() != Material.LEATHER_LEGGINGS || p.getInventory().getBoots() == null || p.getInventory().getBoots().getType() != Material.LEATHER_BOOTS) {
-                        lang.allarmour(p);
-                        return true;
-                    }
-                    Kits.setArmourBrown(p);
-                    lang.dyedarmour(p);
-                    return true;
+                
+                String RGBargs1 = (args[1].toLowerCase());
+                switch (RGBargs1) {
+                    case "red":
+                        Color red = Color.fromRGB(255, 0, 0);
+                        Kits.RGBitem(p, red);
+                        lang.dyedarmour(p);
+                        break;
+                    case "orange":
+                        Color orange = Color.fromRGB(255, 127, 0);
+                        Kits.RGBitem(p, orange);
+                        lang.dyedarmour(p);
+                        break;
+                    case "yellow":
+                        Color yellow = Color.fromRGB(255, 255, 0);
+                        Kits.RGBitem(p, yellow);
+                        lang.dyedarmour(p);
+                        break;
+                    case "green":
+                        Color green = Color.fromRGB(50, 200, 50);
+                        Kits.RGBitem(p, green);
+                        lang.dyedarmour(p);
+                        break;
+                    case "lime":
+                        Color lime = Color.fromRGB(0, 255, 0);
+                        Kits.RGBitem(p, lime);
+                        lang.dyedarmour(p);
+                        break;
+                    case "aqua":
+                        Color aqua = Color.fromRGB(0, 255, 255);
+                        Kits.RGBitem(p, aqua);
+                        lang.dyedarmour(p);
+                        break;
+                    case "sky":
+                        Color sky = Color.fromRGB(50, 160, 255);
+                        Kits.RGBitem(p, sky);
+                        lang.dyedarmour(p);
+                        break;
+                    case "blue":
+                        Color blue = Color.fromRGB(0, 0, 255);
+                        Kits.RGBitem(p, blue);
+                        lang.dyedarmour(p);
+                        break;
+                    case "violet":
+                        Color violet = Color.fromRGB(235, 0, 255);
+                        Kits.RGBitem(p, violet);
+                        lang.dyedarmour(p);
+                        break;
+                    case "purple":
+                        Color purple = Color.fromRGB(170, 0, 255);
+                        Kits.RGBitem(p, purple);
+                        lang.dyedarmour(p);
+                        break;
+                    case "pink":
+                        Color pink = Color.fromRGB(255, 130, 255);
+                        Kits.RGBitem(p, pink);
+                        lang.dyedarmour(p);
+                        break;
+                    case "white":
+                        Color white = Color.fromRGB(255, 255, 255);
+                        Kits.RGBitem(p, white);
+                        lang.dyedarmour(p);
+                        break;
+                    case "black":
+                        Color black = Color.fromRGB(0, 0, 0);
+                        Kits.RGBitem(p, black);
+                        lang.dyedarmour(p);
+                        break;
+                    case "grey":
+                        Color grey = Color.fromRGB(150, 150, 150);
+                        Kits.RGBitem(p, grey);
+                        lang.dyedarmour(p);
+                        break;
+                    case "brown":
+                        Color brown = Color.fromRGB(80, 50, 0);
+                        Kits.RGBitem(p, brown);
+                        lang.dyedarmour(p);
+                        break;
+                    default:
+                        lang.invalidargs(p); // Invalid args
+                        break;
                 }
                 if (args[1].equalsIgnoreCase("RGB")) {
                     if (args.length <= 2) {
@@ -348,69 +282,8 @@ public class MatecraftKits extends JavaPlugin implements Listener {
                     int blueValueInt = Integer.parseInt(blueValueStr);
 
                     Color RGB = Color.fromRGB(redValueInt, greenValueInt, blueValueInt);
-
-                    PlayerInventory pi = p.getInventory();
-                    short bootdur = pi.getBoots().getDurability();
-                    String bootname = pi.getBoots().getItemMeta().getDisplayName();
-                    List<String> bootlore = pi.getBoots().getItemMeta().getLore();
-                    Map<Enchantment, Integer> booten = pi.getBoots().getEnchantments();
-
-                    short chestdur = pi.getChestplate().getDurability();
-                    String chestname = pi.getChestplate().getItemMeta().getDisplayName();
-                    List<String> chestlore = pi.getChestplate().getItemMeta().getLore();
-                    Map<Enchantment, Integer> chesten = pi.getChestplate().getEnchantments();
-
-                    short legdur = pi.getLeggings().getDurability();
-                    String legname = pi.getLeggings().getItemMeta().getDisplayName();
-                    List<String> leglore = pi.getLeggings().getItemMeta().getLore();
-                    Map<Enchantment, Integer> legen = pi.getLeggings().getEnchantments();
-
-                    short helmdur = pi.getHelmet().getDurability();
-                    String helmname = pi.getHelmet().getItemMeta().getDisplayName();
-                    List<String> helmlore = pi.getHelmet().getItemMeta().getLore();
-                    Map<Enchantment, Integer> helmen = pi.getHelmet().getEnchantments();
-
-                    ItemStack redboot = new ItemStack(Material.LEATHER_BOOTS, 1);
-                    redboot.addUnsafeEnchantments(booten);
-                    redboot.setDurability(bootdur);
-                    LeatherArmorMeta redbootmeta = (LeatherArmorMeta) redboot.getItemMeta();
-                    redbootmeta.setDisplayName(bootname);
-                    redbootmeta.setLore(bootlore);
-                    redbootmeta.setColor(RGB);
-                    redboot.setItemMeta(redbootmeta);
-
-                    ItemStack redchest = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
-                    redchest.addUnsafeEnchantments(chesten);
-                    redchest.setDurability(chestdur);
-                    LeatherArmorMeta redchestmeta = (LeatherArmorMeta) redchest.getItemMeta();
-                    redchestmeta.setDisplayName(chestname);
-                    redchestmeta.setLore(chestlore);
-                    redchestmeta.setColor(RGB);
-                    redchest.setItemMeta(redchestmeta);
-
-                    ItemStack redleg = new ItemStack(Material.LEATHER_LEGGINGS, 1);
-                    redleg.addUnsafeEnchantments(legen);
-                    redleg.setDurability(legdur);
-                    LeatherArmorMeta redlegmeta = (LeatherArmorMeta) redleg.getItemMeta();
-                    redlegmeta.setDisplayName(legname);
-                    redlegmeta.setLore(leglore);
-                    redlegmeta.setColor(RGB);
-                    redleg.setItemMeta(redlegmeta);
-
-                    ItemStack redhelm = new ItemStack(Material.LEATHER_HELMET, 1);
-                    redhelm.addUnsafeEnchantments(helmen);
-                    redhelm.setDurability(helmdur);
-                    LeatherArmorMeta redhelmmeta = (LeatherArmorMeta) redhelm.getItemMeta();
-                    redhelmmeta.setDisplayName(helmname);
-                    redhelmmeta.setLore(helmlore);
-                    redhelmmeta.setColor(RGB);
-                    redhelm.setItemMeta(redhelmmeta);
-                    pi.setBoots(redboot);
-                    pi.setChestplate(redchest);
-                    pi.setLeggings(redleg);
-                    pi.setHelmet(redhelm);
-                    return true;
-
+                    // Replaced block of code with Kits Code using RGB user imput.
+                    Kits.RGBitem(p, RGB);
                 } else {
                     p.sendMessage("");
                     p.sendMessage("§7[§5§lMatecraft§7] " + ChatColor.RED + "Something wasn't input correctly or the colour doesn't exist...");
@@ -449,7 +322,7 @@ public class MatecraftKits extends JavaPlugin implements Listener {
         if (cmd.getName().equalsIgnoreCase("mkit") || cmd.getName().equalsIgnoreCase("kit")) {
             if (args.length == 0) {
                 if (!(sender instanceof Player)) {
-                   lang.consoleerror(sender);
+                    lang.consoleerror(sender);
                     return true;
                 }
                 Player p = (Player) sender;
@@ -579,7 +452,7 @@ public class MatecraftKits extends JavaPlugin implements Listener {
             p.sendMessage(ChatColor.LIGHT_PURPLE + " MatecraftKits is a custom kit plugin made for Matecraft. It's the plugin that gives you the tools and food you start off with. It's also the plugin that allows for disco armour!");
             p.sendMessage("");
             p.sendMessage(ChatColor.GREEN + "Version: " + ChatColor.LIGHT_PURPLE + "1.0");
-            p.sendMessage(ChatColor.GREEN + "Author: " + ChatColor.LIGHT_PURPLE + "SquareRival");
+            p.sendMessage(ChatColor.GREEN + "Author: " + ChatColor.LIGHT_PURPLE + "SquareRival" + ChatColor.GREEN + "+" + ChatColor.LIGHT_PURPLE + "Cleggeh");
 
             p.sendMessage("§8§l§m---------§r§8§l[§5MatecraftKits§8§l]§m---------");
             return true;

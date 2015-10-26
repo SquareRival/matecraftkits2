@@ -1,1 +1,6 @@
 colourDelay: 3
+joinKit: false
+
+##Change to false to disable the kit.
+discoKit: true
+rainbowKit: true
