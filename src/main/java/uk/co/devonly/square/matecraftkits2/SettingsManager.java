@@ -31,16 +31,12 @@ public class SettingsManager {
 	public void setup(Plugin p) {
             	cfile = new File(p.getDataFolder(), "config.yml");
 		config = p.getConfig();
-		//config.options().copyDefaults(true);
+		config.options().copyDefaults(true);
                 
                 if (!p.getDataFolder().exists()) {
-                    try {
-                        p.getDataFolder().createNewFile();
-                    }
-                    catch (IOException e) {
-                        Bukkit.getServer().getLogger().severe(ChatColor.RED + "Could not create Kits folder!");
-                    }
+                    p.getDataFolder().mkdir();
                 }
+                
                 pfile = new File(p.getDataFolder(), "players.yml");
                 
                 if (!pfile.exists()) {
@@ -55,7 +51,7 @@ public class SettingsManager {
                 
 	}
         
-        public FileConfiguration getPlayerYML() {
+        public FileConfiguration getPlayersYML() {
             return playersYML;
         }
 	
