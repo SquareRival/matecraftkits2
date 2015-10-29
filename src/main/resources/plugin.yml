@@ -17,6 +17,12 @@ commands:
     dye:
         usage: /<command>
         description: Dye your armour.
+    delhat:
+        usage: /<command>
+        description: Remove your hat.
+    inv:
+        usage: /<command>
+        description: Open the GUI.
 
 permissions:
     matecraftkits.use.starter:
