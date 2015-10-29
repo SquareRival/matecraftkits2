@@ -20,7 +20,7 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import uk.co.devonly.cleggeh.matecraftkits2.GUI;
-import uk.co.devonly.cleggeh.matecraftkits2.lang;
+import uk.co.devonly.cleggeh.matecraftkits2.Lang;
 
 public class MatecraftKits extends JavaPlugin implements Listener {
 
@@ -28,7 +28,7 @@ public class MatecraftKits extends JavaPlugin implements Listener {
     ArrayList<String> rainOff = new ArrayList<String>();
 
     Kits kits = new Kits(this);
-    lang lang = new lang(this);
+    Lang lang = new Lang(this);
     Kits RGBitem = new Kits(this);
     GUI GUI = new GUI(this);
     SettingsManager settings = new SettingsManager(this);

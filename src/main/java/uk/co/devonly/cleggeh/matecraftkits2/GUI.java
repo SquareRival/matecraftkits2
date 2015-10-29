@@ -39,27 +39,11 @@ public class GUI implements Listener {
     public GUI(MatecraftKits plugin) {
         this.plugin = plugin;
     }
-
-    public static ItemStack createItem(int id, short dur, int amount, String name, String skullname, String... lore) {
-        List<String> LoreList = Arrays.asList(lore);
-        ItemStack i = new ItemStack(Material.getMaterial(id), amount);
-        i.setDurability(dur);
-        ItemMeta im = i.getItemMeta();
-        im.setDisplayName(name);
-        im.setLore(LoreList);
-        i.setItemMeta(im);
-        if (!("none".equals(skullname))) {
-            SkullMeta meta = (SkullMeta) Bukkit.getItemFactory().getItemMeta(Material.SKULL_ITEM);
-            meta.setOwner(skullname);
-        }
-        return i;
-    }
-
-    public void Menu(Plugin p) {
+        public void Menu(Plugin p) {
 
         inv = Bukkit.getServer().createInventory(null, 9, "Hats");
 
-        //ItemName = createItem(Material. , ChatColor. + Item Name, Skull name -- null if none, Amount, lore, lore1, ECT); 
+        //ItemName = createItem(Material ID , ChatColor. + Item Name, Skull name -- null if none, Amount, lore, lore1, ECT); 
         head1 = createItem(397, (short) 3, 1, ChatColor.AQUA + "A Hat", "Cleggeh", "A Letter Hat.");
         head2 = createItem(397, (short) 3, 1, ChatColor.AQUA + "B Hat", "none", "B Letter Hat.");
         head3 = createItem(397, (short) 3, 1, ChatColor.AQUA + "C Hat", "none", "C Letter Hat.");
@@ -74,6 +58,24 @@ public class GUI implements Listener {
         inv.setItem(3, head3);
 
         Bukkit.getServer().getPluginManager().registerEvents(this.plugin, p);
+        }
+
+        /*Creates a method that takes an item ID, durability, 
+        * amount, name, skullowner, and lore and turns it into an item.
+        */
+    private ItemStack createItem(int id, short dur, int amount, String name, String skullname, String... lore) {
+        List<String> LoreList = Arrays.asList(lore);
+        ItemStack i = new ItemStack(Material.getMaterial(id), amount);
+        i.setDurability(dur);
+        ItemMeta im = i.getItemMeta();
+        im.setDisplayName(name);
+        im.setLore(LoreList);
+        i.setItemMeta(im);
+        if (!("none".equals(skullname))) {
+            SkullMeta meta = (SkullMeta) Bukkit.getItemFactory().getItemMeta(Material.SKULL_ITEM);
+            meta.setOwner(skullname);
+        }
+        return i;
     }
 
     public void onInventoryClick(InventoryClickEvent e) {
